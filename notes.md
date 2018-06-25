@@ -1,0 +1,2 @@
+It only took me a couple hours to get the app talking to the api but I could'nt render anything to the page.  I spent many, many hours on it without finding the solution. 
+I just want to know what I was missing to render beers and breweries on the page.

@@ -9,34 +9,34 @@ class Beers extends React.Component {
 
   componentDidMount() {
     axios.get('/api/all_beers')
-      .then(res => {
-        this.setState({ beers: res.data })
-      })
-      .catch( error => {
-        console.log(error.response);
-    });
-  }
+      .then( ({ data: beers }) => this.setState({ beers }) )
+        console.log(this.state)
+      }
+  
 
-  // beers = () => {
-  // const { beers } = this.state
-  //   { beers.map( b =>
-  //     <Card key={b.id}>
-  //       <Card.Content>
-  //         <Card.Header>
-  //         {b.name}
-  //         </Card.Header>
-  //       </Card.Content>
-  //     </Card>
-  //     )
-  //   }
-  // }
+    beers = () => {
+      this.setState({ beers })
+      console.log(this.state)
+       { beers.map( b =>
+         <Card key={b.id}>
+           <Card.Content>
+             <Card.Header>
+             {b.name}
+             </Card.Header>
+           </Card.Content>
+         </Card>
+        )
+       }
+     }
 
   render() {
+    const { beers } = this.state
+    console.log(this.state)
     return (
       <Container>
         <Header as="h3" textAlign="center">Beers</Header>
           <Card.Group itemsPerRow={4}>
-            {/* { this.beers() } */}
+            {this.beers()}
           </Card.Group>
         </Container>
       )
